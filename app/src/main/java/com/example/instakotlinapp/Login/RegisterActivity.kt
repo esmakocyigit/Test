@@ -10,8 +10,10 @@ import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.core.widget.addTextChangedListener
 import com.example.instakotlinapp.R
+import com.example.instakotlinapp.utils.EventbusDataEvents
 import kotlinx.android.synthetic.main.activity_profile.*
 import kotlinx.android.synthetic.main.activity_register.*
+import org.greenrobot.eventbus.EventBus
 
 class RegisterActivity : AppCompatActivity() {
 
@@ -75,6 +77,7 @@ class RegisterActivity : AppCompatActivity() {
                 transaction.replace(R.id.loginContainer,TelefonKoduGirFragment())
                 transaction.addToBackStack("telefonKoduGirFragmentEklendi")
                 transaction.commit()
+                EventBus.getDefault().postSticky(EventbusDataEvents.TelefonNoGonder(etGirisYontemi.text.toString()))
             }
             else{
                 loginRoot.visibility=View.GONE
@@ -83,6 +86,7 @@ class RegisterActivity : AppCompatActivity() {
                 transaction.replace(R.id.loginContainer,EmailGirisYontemiFragment())
                 transaction.addToBackStack("EmailGirisYontemiFragmentEklendi")
                 transaction.commit()
+                EventBus.getDefault().postSticky(EventbusDataEvents.EmailGonder(etGirisYontemi.text.toString()))
 
             }
         }
