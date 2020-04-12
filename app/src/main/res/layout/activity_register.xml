@@ -34,92 +34,6 @@
             app:layout_constraintTop_toTopOf="parent"
             tools:ignore="MissingConstraints" />
 
-        <TextView
-            android:id="@+id/tvTelefon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="96dp"
-            android:layout_marginLeft="96dp"
-            android:layout_marginTop="32dp"
-            android:text="TELEFON"
-            android:textColor="@color/siyah"
-            android:textSize="18sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imgProfil" />
-
-        <TextView
-            android:id="@+id/tvEposta"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:layout_marginEnd="96dp"
-            android:layout_marginRight="96dp"
-            android:text="E-POSTA"
-            android:textSize="18sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imgProfil" />
-
-        <View
-            android:id="@+id/uzunGolgelik"
-            android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp"
-            android:background="@color/golgelik"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/viewTelefon"
-            tools:ignore="MissingConstraints">
-
-        </View>
-
-        <View
-            android:id="@+id/viewEposta"
-            android:layout_width="180dp"
-            android:layout_height="2dp"
-            android:layout_marginTop="8dp"
-            android:background="@color/siyah"
-            android:visibility="invisible"
-            app:layout_constraintEnd_toEndOf="@+id/tvEposta"
-            app:layout_constraintStart_toStartOf="@+id/tvEposta"
-            app:layout_constraintTop_toBottomOf="@+id/tvEposta"
-            tools:ignore="MissingConstraints">
-
-        </View>
-
-        <View
-            android:id="@+id/viewTelefon"
-            android:layout_width="180dp"
-            android:layout_height="2dp"
-            android:layout_marginTop="8dp"
-            android:background="@color/siyah"
-            app:layout_constraintEnd_toEndOf="@+id/tvTelefon"
-            app:layout_constraintHorizontal_bias="0.479"
-            app:layout_constraintStart_toStartOf="@+id/tvTelefon"
-            app:layout_constraintTop_toBottomOf="@+id/tvTelefon"
-            tools:ignore="MissingConstraints">
-
-        </View>
-
-        <EditText
-            android:id="@+id/etGirisYontemi"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginRight="16dp"
-            android:background="@drawable/register_edit_text"
-            android:ems="10"
-            android:hint="Telefon"
-            android:inputType="number"
-            android:padding="14dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/uzunGolgelik" />
 
         <Button
             android:id="@+id/btnIleri"
@@ -136,8 +50,10 @@
             android:textAllCaps="false"
             android:textColor="@color/sonukmavi"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/etGirisYontemi" />
+            app:layout_constraintTop_toBottomOf="@+id/etGirisYontemi"
+            tools:ignore="MissingConstraints" />
 
         <View
             android:id="@+id/golgelik1"
@@ -180,6 +96,38 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/golgelik1"
             app:layout_constraintVertical_bias="0.0" />
+
+        <EditText
+            android:id="@+id/etGirisYontemi"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="112dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:ems="10"
+            android:hint="Okul Maili"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imgProfil" />
+
+        <TextView
+            android:id="@+id/tvEposta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginLeft="32dp"
+            android:layout_marginTop="241dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginRight="32dp"
+            android:text="E-POSTA"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -25,21 +25,11 @@ class RegisterActivity : AppCompatActivity() {
 
     private fun init() {
         tvEposta.setOnClickListener {
-            viewTelefon.visibility=View.INVISIBLE
-            viewEposta.visibility=View.VISIBLE
             etGirisYontemi.setText("")
             etGirisYontemi.inputType=InputType.TYPE_TEXT_VARIATION_EMAIL_ADDRESS
-            etGirisYontemi.setHint("E-Posta")
             btnIleri.isEnabled=false
         }
-        tvTelefon.setOnClickListener {
-            viewTelefon.visibility=View.VISIBLE
-            viewEposta.visibility=View.INVISIBLE
-            etGirisYontemi.setText("")
-            etGirisYontemi.inputType=InputType.TYPE_CLASS_NUMBER
-            etGirisYontemi.setHint("Telefon")
-            btnIleri.isEnabled=false
-        }
+
 
         etGirisYontemi.addTextChangedListener (object :TextWatcher{
             override fun afterTextChanged(s: Editable?) {
@@ -70,17 +60,9 @@ class RegisterActivity : AppCompatActivity() {
         })
 
         btnIleri.setOnClickListener{
-            if(etGirisYontemi.hint.toString().equals("Telefon")){
-                loginRoot.visibility=View.GONE
-                loginContainer.visibility=View.VISIBLE
-                var transaction=supportFragmentManager.beginTransaction()
-                transaction.replace(R.id.loginContainer,TelefonKoduGirFragment())
-                transaction.addToBackStack("telefonKoduGirFragmentEklendi")
-                transaction.commit()
-                EventBus.getDefault().postSticky(EventbusDataEvents.TelefonNoGonder(etGirisYontemi.text.toString()))
-            }
-            else{
-                loginRoot.visibility=View.GONE
+
+
+             loginRoot.visibility=View.GONE
                 loginContainer.visibility=View.VISIBLE
                 var transaction=supportFragmentManager.beginTransaction()
                 transaction.replace(R.id.loginContainer,EmailGirisYontemiFragment())
@@ -91,9 +73,6 @@ class RegisterActivity : AppCompatActivity() {
             }
         }
     }
-    override fun onBackPressed() {
-        loginRoot.visibility= View.VISIBLE
-        super.onBackPressed()
-    }
 
-}
+
+
